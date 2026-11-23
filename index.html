@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>GRAND THEFT AUTO VI | Vice City / Leonida Next-Gen Browser Engine</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>">
+</head>
+<body>
+  <!-- 3D WebGL Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- In-Game GTA VI HUD Overlay -->
+  <div id="hud-overlay">
+    <!-- Top Right: Cash, Wanted Stars, Weapon & Ammo -->
+    <div id="hud-top-right">
+      <div id="hud-cash">$25,000</div>
+      <div id="wanted-stars">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <div id="weapon-hud">
+        <div id="weapon-name">COMBAT PISTOL</div>
+        <div id="weapon-ammo">12 / 72</div>
+      </div>
+    </div>
+
+    <!-- Center Top Notifications -->
+    <div id="notification-banner">
+      <div id="banner-title">WELCOME TO LEONIDA</div>
+      <div id="banner-subtitle">Explore Vice City, drive supercars, or cause chaos!</div>
+    </div>
+
+    <!-- In-Car Radio Station Notification -->
+    <div id="radio-banner">
+      <div id="radio-station-name">VICE WAVE 103</div>
+      <div id="radio-genre">80s Synthwave / Outrun</div>
+    </div>
+
+    <!-- Crosshair for Shooting/Aiming -->
+    <div id="crosshair"></div>
+
+    <!-- Bottom Left: Circular Minimap Radar & Health/Armor Gauges -->
+    <div id="minimap-container">
+      <canvas id="minimap-canvas"></canvas>
+    </div>
+
+    <!-- Bottom Right: Next-Gen Vehicle Speedometer & RPM Gauge -->
+    <div id="speedometer-hud">
+      <div class="speed-readout">
+        <span id="speed-digits">000</span>
+        <span class="speed-unit">MPH</span>
+      </div>
+      <div id="gear-indicator">GEAR 1</div>
+      <div class="rpm-bar-container">
+        <div id="rpm-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Click to Resume Pointer Lock Pill after Escape -->
+  <div id="pause-indicator">CLICK SCREEN TO RESUME VIEW</div>
+
+  <!-- Touch Controls (Mobile / Tablet) -->
+  <div id="touch-controls">
+    <div id="touch-joystick-zone">
+      <div id="touch-joystick-knob"></div>
+    </div>
+    <div id="touch-look-zone"></div>
+    <div id="touch-action-buttons">
+      <div id="btn-touch-enter" class="touch-btn">CAR</div>
+      <div id="btn-touch-shoot" class="touch-btn">FIRE</div>
+      <div id="btn-touch-aim" class="touch-btn">AIM</div>
+      <div id="btn-touch-drift" class="touch-btn">DRIFT</div>
+      <div id="btn-touch-horn" class="touch-btn">HORN</div>
+    </div>
+  </div>
+
+  <!-- Start & Controls Screen -->
+  <div id="start-screen">
+    <div class="gta-logo">
+      <h1>GRAND THEFT AUTO VI</h1>
+      <div class="subtitle">LEONIDA • VICE CITY</div>
+    </div>
+
+    <div class="controls-card">
+      <div class="controls-grid">
+        <div class="ctrl-item"><span>Move / Steer:</span> <span class="ctrl-key">W A S D</span></div>
+        <div class="ctrl-item"><span>Look / Aim:</span> <span class="ctrl-key">Mouse</span></div>
+        <div class="ctrl-item"><span>Enter / Exit Vehicle:</span> <span class="ctrl-key">F / Enter</span></div>
+        <div class="ctrl-item"><span>Handbrake / Drift:</span> <span class="ctrl-key">Spacebar</span></div>
+        <div class="ctrl-item"><span>Shoot / Accelerate:</span> <span class="ctrl-key">Left Click / W</span></div>
+        <div class="ctrl-item"><span>Aim Down Sight:</span> <span class="ctrl-key">Right Click</span></div>
+        <div class="ctrl-item"><span>Switch Weapon:</span> <span class="ctrl-key">1 2 3 4 / Q E</span></div>
+        <div class="ctrl-item"><span>Radio Station:</span> <span class="ctrl-key">R</span></div>
+        <div class="ctrl-item"><span>Vehicle Horn / Siren:</span> <span class="ctrl-key">H / E</span></div>
+        <div class="ctrl-item"><span>Sprint / Speed:</span> <span class="ctrl-key">Shift</span></div>
+      </div>
+    </div>
+
+    <button id="btn-start" class="btn-play">ENTER VICE CITY</button>
+  </div>
+
+  <!-- Main Game Bootstrap Script -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
